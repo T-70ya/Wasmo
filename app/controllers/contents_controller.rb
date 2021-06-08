@@ -5,13 +5,28 @@ class ContentsController < ApplicationController
   end
 
   def create
-    Content.create(params_content)
-    redirect_to contents_path
+    if Content.create(params_content)
+      redirect_to root_path
+    else
+      render action: :index
+    end
   end
 
-  #def show 
+  def show 
+    @content = Content.find(params[:id])
+  end
+
+  #def edit
     #@content = Content.find(params[:id])
   #end
+
+  #def update
+    #@content = Content.find(params[:id])
+    #if @content.update
+      #redirect_to content_path
+    #else
+      #render action: :edit
+    #end
 
   private
 
