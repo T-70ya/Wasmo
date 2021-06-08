@@ -1,0 +1,20 @@
+<div class="show">
+  <p>
+    <strong>タイトル</strong>
+    <%= @content.title %>
+  </p>
+
+  <p>
+    <strong>内容</strong>
+    <%= @content.money %>
+  </p>
+
+  <p>
+    <strong>日時</strong>
+    <%= @content.start_time.strftime("%m-%d") %>
+  </p>
+
+  <%= link_to '編集', edit_content_path(@content) %>
+  <%= link_to '削除', content_path(@content.id), method: :delete, data: { confirm: '本当に?' } %>
+  <%= link_to '戻る', root_path %>
+</div>
