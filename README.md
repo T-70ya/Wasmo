@@ -1,7 +1,7 @@
 ## Contents
 
-|Colum  |Type     |Option  |
-|-------|---------|--------|
-|title  |string   |        |
-|money  |integer  |        |
+|Colum  |Type     |Option       |
+|-------|---------|-------------|
+|title  |string   |null: false  |
+|money  |integer  |null: false  |
 
