@@ -1,10 +1,11 @@
 <div class="simple-calendar">
   <div class="calendar-heading">
+    <%= link_to '金額入力', new_content_path%>
     <%= link_to t('simple_calendar.previous', default: '<<'), calendar.url_for_previous_view %>
-    <span class="calendar-title"><%= start_date.year %>年 <%= t('date.month_names')[start_date.month] %></span>
+    <span class="calendar-title"><%= start_date.year %>年 <%= t('date.month_names')[start_date.month] %></span> 
     <%= link_to t('simple_calendar.next', default: '>>'), calendar.url_for_next_view %>
+    <%= @month_total_view %>
   </div>
-
   <table class="table table-striped">
     <thead>
       <tr>

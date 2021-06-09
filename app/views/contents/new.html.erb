@@ -1,0 +1,23 @@
+<%= form_with(model: @content, local: true) do |f| %>
+  
+  <div class="title">
+    <div class="form-tag">タイトル</div>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="money">
+    <div class="form-tag">金額</div>
+    <%= f.text_field :money %>
+  </div>
+
+  <div class="time">
+    <div class="form-tag">時間</div>
+    <%= f.datetime_select :start_time %>
+  </div>
+
+  <div class="submit">
+    <%= f.submit %> <%= link_to '戻る', contents_path %>
+  </div>
+
+
+<% end %>

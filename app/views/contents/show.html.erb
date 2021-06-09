@@ -6,15 +6,15 @@
 
   <p>
     <strong>内容</strong>
-    <%= @content.money %>
+    <%= @content.money %>円
   </p>
 
   <p>
     <strong>日時</strong>
-    <%= @content.start_time.strftime("%m-%d") %>
+    <%= @content.start_time.strftime("20%y年%m月%d日") %>
   </p>
 
   <%= link_to '編集', edit_content_path(@content) %>
   <%= link_to '削除', content_path(@content.id), method: :delete, data: { confirm: '本当に?' } %>
-  <%= link_to '戻る', root_path %>
+  <%= link_to '戻る', contents_path(@time) %>
 </div>
