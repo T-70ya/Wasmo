@@ -1,0 +1,83 @@
+
+.show {
+  background-color: blanchedalmond;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.show-main {
+  background-color: whitesmoke;
+  width: 50vw;
+  min-width: 450px;
+  padding: 2vw 10vw;
+}
+
+.title-show {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content-show {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.time-show {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.show-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.edit-btn {
+  background-color:red;
+  border: 1px solid red;
+  color: white;
+  text-align: center;
+  padding: 15px 100px;
+}
+
+.delete-btn {
+  background-color:red;
+  border: 1px solid red;
+  color: white;
+  text-align: center;
+  padding: 15px 100px;
+  margin-bottom: 30px;
+}
+
+.show-back-btn {
+  background-color: grey;
+  border: 1px solid grey;
+  color: white;
+  text-align: center;
+  padding: 15px 60px;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+.show-footer {
+  color: aqua;
+  text-align: center;
+  font-size: 40px;
+  font-family: 'Snell Roundhand',sans-serif;
+}
+
+.contents {
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+.show-contents {
+  font-size: 40px;
+  margin-bottom: 30px;
+}

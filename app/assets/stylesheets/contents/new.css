@@ -1,0 +1,108 @@
+form {
+  margin-top: 50px;
+}
+
+.money-contents {
+  background-color: blanchedalmond;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.money-main {
+  background-color: whitesmoke;
+  width: 50vw;
+  min-width: 450px;
+  padding: 1vw 10vw;
+}
+
+.rough-contents {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.form-tag {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.mandatory {
+  background-color: red;
+  color: white;
+  margin-left: 10px;
+  padding: 3px;
+  border-radius: 3px;
+  font-size: 15px;
+}
+
+.money-form {
+  width: 50%;
+  padding: 12px 6px;
+  margin-bottom: 75px;
+}
+
+.time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.date-time {
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.time-select {
+  height: 40px;
+  width: 70px;
+}
+
+.btn-contents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.submit-btn {
+  background-color: aqua;
+  border: 1px solid aqua;
+  width: 300px;
+  height: 80px;
+  font-size: 20px;
+  color: white;
+  margin-bottom: 50px;
+}
+
+.new-back-btn {
+  background-color: grey;
+  border: 1px solid grey;
+  color: white;
+  text-align: center;
+  padding: 15px 60px;
+  margin-bottom: 50px;
+}
+
+.header-title {
+  font-family: 'Hannotate TC',sans-serif;
+  font-size: 50px;
+  padding: 15px;
+}
+
+.money-footer {
+  text-align: center;
+  font-family: 'Snell Roundhand',sans-serif;
+  font-size: 40px;
+  color: aqua;
+}
+
+.edit-submit-btn {
+  background-color: red;
+  border: 1px solid red;
+  width: 300px;
+  height: 80px;
+  font-size: 20px;
+  color: white;
+  margin-bottom: 50px;
+}

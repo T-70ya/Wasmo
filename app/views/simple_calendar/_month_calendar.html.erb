@@ -1,34 +1,40 @@
 <div class="simple-calendar">
   <div class="calendar-heading">
-    <%= link_to '金額入力', new_content_path%>
-    <%= link_to t('simple_calendar.previous', default: '<<'), calendar.url_for_previous_view %>
+    <%= link_to '金額入力', new_content_path, class:"money-btn" %>
+    <%= link_to t('simple_calendar.previous', default: '<<'), calendar.url_for_previous_view, class:"calendar-left" %>
     <span class="calendar-title"><%= start_date.year %>年 <%= t('date.month_names')[start_date.month] %></span> 
-    <%= link_to t('simple_calendar.next', default: '>>'), calendar.url_for_next_view %>
-    <%= @month_total_view %>
+    <%= link_to t('simple_calendar.next', default: '>>'), calendar.url_for_next_view, class:"calendar-right" %>
+      <% if @month_total_view != nil %>
+        <span class="month-money"><%= "#{@month_total_view}円" %></span>
+      <% else %>
+        <span class="month-money"><%= "0円" %></span>
+      <% end %>
   </div>
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <% date_range.slice(0, 7).each do |day| %>
-          <th><%= t('date.abbr_day_names')[day.wday] %></th>
-        <% end %>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% date_range.each_slice(7) do |week| %>
+  <div class="calendar-index">
+    <table class="table table-striped">
+      <thead>
         <tr>
-          <% week.each do |day| %>
-            <%= content_tag :td, class: calendar.td_classes_for(day) do %>
-              <% if defined?(Haml) && respond_to?(:block_is_haml?) && block_is_haml?(passed_block) %>
-                <% capture_haml(day, sorted_events.fetch(day, []), &passed_block) %>
-              <% else %>
-                <% passed_block.call day, sorted_events.fetch(day, []) %>
-              <% end %>
-            <% end %>
+          <% date_range.slice(0, 7).each do |day| %>
+            <th><%= t('date.abbr_day_names')[day.wday] %></th>
           <% end %>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
+
+      <tbody>
+        <% date_range.each_slice(7) do |week| %>
+          <tr>
+            <% week.each do |day| %>
+              <%= content_tag :td, class: calendar.td_classes_for(day) do %>
+                <% if defined?(Haml) && respond_to?(:block_is_haml?) && block_is_haml?(passed_block) %>
+                  <% capture_haml(day, sorted_events.fetch(day, []), &passed_block) %>
+                <% else %>
+                  <% passed_block.call day, sorted_events.fetch(day, []) %>
+                <% end %>
+              <% end %>
+            <% end %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>
