@@ -11,12 +11,15 @@ footer {
 }
 
 .app-header {
-  font-size: 50px;
-  font-family: 'Snell Roundhand',sans-serif;
   color: aqua;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
 }
 
 .appname {
+  font-size: 50px;
+  font-family: 'Snell Roundhand',sans-serif;
   color: aqua;
 }
 
@@ -63,3 +66,22 @@ footer {
   right: 50px;
   font-size: 30px;
 }
+
+.user-name {
+  font-size: 20px;
+  color: black;
+  position: absolute;
+  top: 20px;
+  right: 185px;
+}
+
+.logout {
+  font-size: 20px;
+  padding: 5px;
+  background-color: aqua;
+  color: white;
+  position: absolute;
+  top: 15px;
+  right: 50px;
+}
+

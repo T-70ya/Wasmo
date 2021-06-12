@@ -1,6 +1,16 @@
 <div class="toppage">
   <header class="app-header">
-    <%= link_to 'Wasmo', contents_path, class:"appname"%>
+    <div class="app-name">
+      <%= link_to 'Wasmo', contents_path, class:"appname"%>
+    </div>
+    <div class="nav">
+      <% if user_signed_in? %>
+        <%= link_to current_user.username, '#', class:"user-name" %>
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"logout"%>
+      <% end %>
+        <%#<%= link_to "ログイン", user_session_path, class:"login"%>
+        <%#<%= link_to "新規登録", new_user_session_path, class:"sign-up"%>
+      <%#<% end %>
   </header>
   <div class="calendar">
     <%= month_calendar events: @contents do |date, contents| %>
