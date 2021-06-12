@@ -1,12 +1,19 @@
 <div class="toppage">
+  <header class="app-header">
+    <%= link_to 'Wasmo', contents_path, class:"appname"%>
+  </header>
   <div class="calendar">
-  <%= month_calendar events: @contents do |date, contents| %>
-    <%= date.day %>
+    <%= month_calendar events: @contents do |date, contents| %>
+      <%= date.day %>
 
-    <% contents.each do |c| %>
-      <div>
-        <%= link_to "#{c.money}円", c %>
-      </div>
+      <% contents.each do |c| %>
+        <div>
+          <%= link_to "#{c.money}円", c %>
+        </div>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
+  <footer class="calendar-footer">
+    Wasmo
+  </footer>
 </div>

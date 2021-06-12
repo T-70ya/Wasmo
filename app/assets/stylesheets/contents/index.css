@@ -1,0 +1,65 @@
+html, body {
+  margin: 0%;
+}
+
+header {
+  background-color: oldlace;
+}
+
+footer {
+  background-color: oldlace;
+}
+
+.app-header {
+  font-size: 50px;
+  font-family: 'Snell Roundhand',sans-serif;
+  color: aqua;
+}
+
+.appname {
+  color: aqua;
+}
+
+.toppage{
+  position: relative;
+}
+
+.calendar-heading {
+  background-color: blanchedalmond;
+}
+
+.calendar {
+  background-color: blanchedalmond;
+}
+
+.calendar-index {
+  padding: 50px;
+}
+
+.table.table-striped {
+  background-color: white;
+}
+
+.calendar-footer {
+  text-align: center;
+  font-size: 40px;
+  font-family: 'Snell Roundhand',sans-serif;
+  color: aqua;
+}
+
+.money-btn {
+  background-color: aqua;
+  color: white;
+  font-size: 20px;
+  padding: 5px;
+  position: absolute;
+  top: 110px;
+  left: 50px;
+}
+
+.month-money {
+  position: absolute;
+  top: 110px;
+  right: 50px;
+  font-size: 30px;
+}

@@ -1,23 +1,47 @@
-<%= form_with(model: @content, local: true) do |f| %>
-  
-  <div class="title">
-    <div class="form-tag">タイトル</div>
-    <%= f.text_field :title %>
+<div class="contents-money">
+  <header class="app-header">
+    <%= link_to 'Wasmo', contents_path, class:"appname"%>
+  </header>
+  <div class="money-contents">
+    <div class="header-title">
+      無駄遣い記入フォーム
+    </div>
+    <div class="money-main">
+      <%= form_with(model: @content, local: true) do |f| %>
+        
+        <div class="rough-contents">
+          <div class="form-tag">
+          タイトル
+          <span class="mandatory">必須</span>
+          </div>
+          <%= f.text_field :title, class:"money-form", placeholder:"タイトル名(15文字まで)", maxlength:"15" %>
+          <div class="form-tag">
+          金額
+          <span class="mandatory">必須</span>
+          </div>
+          <%= f.text_field :money, class:"money-form", placeholder:"金額(999万9999円まで)", maxlength:"7" %>
+        </div>
+
+        <div class="time">
+          <div class="form-tag">
+          時間
+          <span class="mandatory">必須</span>
+          </div>
+        </div>
+
+        <div class="date-time">
+        <%= f.datetime_select :start_time, {}, class:"time-select" %>
+        </div>
+
+        <div class="btn-contents">
+          <%= f.submit "記載する", class:"submit-btn" %> 
+          <%= link_to '戻る', contents_path, class:"new-back-btn" %>
+        </div>
+
+      <% end %>
+    </div>
   </div>
-
-  <div class="money">
-    <div class="form-tag">金額</div>
-    <%= f.text_field :money %>
-  </div>
-
-  <div class="time">
-    <div class="form-tag">時間</div>
-    <%= f.datetime_select :start_time %>
-  </div>
-
-  <div class="submit">
-    <%= f.submit %> <%= link_to '戻る', contents_path %>
-  </div>
-
-
-<% end %>
+    <footer class="money-footer">
+      Wasmo
+    </footer>
+</div>

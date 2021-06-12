@@ -1,20 +1,41 @@
-<div class="show">
-  <p>
-    <strong>タイトル</strong>
-    <%= @content.title %>
-  </p>
+<div class="show-form">
+  <header class="app-header">
+    <%= link_to 'Wasmo', contents_path, class:"appname"%>
+  </header>
+  <div class="show">
+    <div class="header-title">
+      無駄遣い
+    </div>
+    <div class="show-main">
+      <div class="title-show">
+        <strong class="contents">タイトル</strong>
+        <div class="show-contents">
+          <%= @content.title%>
+        </div>
+      </div>
 
-  <p>
-    <strong>内容</strong>
-    <%= @content.money %>円
-  </p>
+      <div class="content-show">
+        <strong class="contents">内容</strong>
+        <div class="show-contents">
+          <%= @content.money %>円
+        </div>
+      </div>
 
-  <p>
-    <strong>日時</strong>
-    <%= @content.start_time.strftime("20%y年%m月%d日") %>
-  </p>
+      <div class="time-show">
+        <strong class="contents">日時</strong>
+        <div class="show-contents">
+          <%= @content.start_time.strftime("20%y年%m月%d日") %>
+        </div>
+      </div>
 
-  <%= link_to '編集', edit_content_path(@content) %>
-  <%= link_to '削除', content_path(@content.id), method: :delete, data: { confirm: '本当に?' } %>
-  <%= link_to '戻る', contents_path(@time) %>
+      <div class="show-btn">
+        <%= link_to '編集', edit_content_path(@content), class:"edit-btn" %><h3 class="show-or">or</h3>
+        <%= link_to '削除', content_path(@content.id), class:"delete-btn", method: :delete, data: { confirm: '本当に?' } %>
+        <%= link_to '戻る', contents_path(@time), class:"show-back-btn" %>
+      </div>
+    </div>
+  </div>
+  <footer class="show-footer">
+    Wasmo
+  </footer>
 </div>
