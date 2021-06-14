@@ -85,3 +85,23 @@ footer {
   right: 50px;
 }
 
+.login {
+  font-size: 20px;
+  padding: 5px;
+  background-color: aqua;
+  color:white;
+  position: absolute;
+  top: 20px;
+  right: 185px;
+}
+
+.sign-up {
+  font-size: 20px;
+  padding: 5px;
+  background-color: aqua;
+  color:white;
+  position: absolute;
+  top: 20px;
+  right: 50px;
+}
+

@@ -1,6 +1,7 @@
 <div class="simple-calendar">
   <div class="calendar-heading">
     <%= link_to '金額入力', new_content_path, class:"money-btn" %>
+    <%= link_to '目標金額入力', new_plan_path, class:"target-btn" %>
     <%= link_to t('simple_calendar.previous', default: '<<'), calendar.url_for_previous_view, class:"calendar-left" %>
     <span class="calendar-title"><%= start_date.year %>年 <%= t('date.month_names')[start_date.month] %></span> 
     <%= link_to t('simple_calendar.next', default: '>>'), calendar.url_for_next_view, class:"calendar-right" %>

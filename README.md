@@ -8,6 +8,7 @@
 ## Association
 
 ・belongs_to :user
+・has_one :plan
 
 ## Users
 
@@ -20,3 +21,16 @@
 ## Association
 
 ・has_many :contents
+・has_many :plans
+
+## Plans
+
+|Colum    |Type     |Option       |
+|---------|---------|-------------|
+|target   |integer  |null: false  |
+
+## Association
+
+・belongs_to :user
+・has_one :content
+

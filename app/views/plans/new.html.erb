@@ -1,0 +1,24 @@
+<div class="money-main">
+  <%= form_with(model: @plan, local: true) do |f| %>
+    <div class="rough-contents">
+      <div class="form-tag">
+        目標金額
+      <span class="mandatory">必須</span>
+      </div>
+      <%= f.text_field :target, class:"money-form", placeholder:"金額(999万9999円まで)", maxlength:"7" %>
+    </div>
+    <div class="time">
+      <div class="form-tag">
+      時間
+      <span class="mandatory">必須</span>
+      </div>
+    </div>
+    <div class="date-time">
+      <%= f.date_select :month, {:discard_day => true}, class:"time-select" %>
+    </div>
+    <div class="btn-contents">
+      <%= f.submit "設定する", class:"submit-btn" %> 
+      <%= link_to '戻る', contents_path, class:"new-back-btn" %>
+    </div>
+  <% end %>
+</div>

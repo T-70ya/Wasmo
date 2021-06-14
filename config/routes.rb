@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  get 'contents/index' => "contents#index", :as => :auth_at_start_date
+  get 'contents/index'
 
   root to: 'contents#index'
   resources :contents
+  resources :plans
 end

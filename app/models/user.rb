@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :contents
+  has_many :plans
 
   validates :username, presence: true
 end
