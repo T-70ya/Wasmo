@@ -18,9 +18,8 @@ footer {
 }
 
 .appname {
-  font-size: 50px;
-  font-family: 'Snell Roundhand',sans-serif;
-  color: aqua;
+  height: 80px;
+  width: 180px;
 }
 
 .toppage{
@@ -37,6 +36,7 @@ footer {
 
 .calendar-index {
   padding: 50px;
+  margin-top: 35px;
 }
 
 .table.table-striped {
@@ -56,13 +56,13 @@ footer {
   font-size: 20px;
   padding: 5px;
   position: absolute;
-  top: 110px;
+  top: 135px;
   left: 50px;
 }
 
 .month-money {
   position: absolute;
-  top: 110px;
+  top: 135px;
   right: 50px;
   font-size: 30px;
 }
@@ -71,7 +71,7 @@ footer {
   font-size: 20px;
   color: black;
   position: absolute;
-  top: 20px;
+  top: 30px;
   right: 185px;
 }
 
@@ -81,7 +81,7 @@ footer {
   background-color: aqua;
   color: white;
   position: absolute;
-  top: 15px;
+  top: 25px;
   right: 50px;
 }
 
@@ -105,3 +105,64 @@ footer {
   right: 50px;
 }
 
+.target-btn {
+  background-color: aqua;
+  color: white;
+  font-size: 20px;
+  padding: 5px;
+  position: absolute;
+  top: 135px;
+  left: 200px;
+}
+
+.target-edit {
+  position: absolute;
+  top: 85px;
+  right: 50px;
+  font-size: 30px;
+  color:red;
+}
+
+.sagaku {
+  position: absolute;
+  top: 185px;
+  right: 50px;
+  font-size: 30px;
+}
+
+.footer-app {
+  height: 80px;
+  width: 160px;
+  margin-top: 5px;
+}
+
+.search-img {
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  top: 25px;
+  left: 958px;
+  font-size: 25px;
+  background-color: aqua;
+  border: aqua;
+}
+
+.keyword {
+  height: 35px;
+  width: 500px;
+  position: absolute;
+  top: 25px;
+  left: 450px;
+}
+
+.search-button {
+  border: 0px;
+  padding: 0px;
+  height: 40px;
+}
+
+.search-form {
+  margin: 0px;
+  display: flex;
+  align-items: center;
+}

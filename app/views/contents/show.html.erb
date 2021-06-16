@@ -1,14 +1,15 @@
 <div class="show-form">
-  <header class="app-header">
-    <%= link_to 'Wasmo', contents_path, class:"appname"%>
-  </header>
+  <%= render "shared/header" %>
   <div class="show">
     <div class="header-title">
       無駄遣い
     </div>
     <div class="show-main">
-      <div class="name">
-        <%= @content.user.username%>
+      <div class="title-show">
+        <strong class="contents">ユーザー名</strong>
+        <div class="show-contents">
+          <%= @content.user.username%>
+        </div>
       </div>
       <div class="title-show">
         <strong class="contents">タイトル</strong>
@@ -37,8 +38,11 @@
         <%= link_to '戻る', contents_path(@time), class:"show-back-btn" %>
       </div>
     </div>
+    <div class="footer-title">
+    <br />
+    <br />
+    <br />
+    </div>
   </div>
-  <footer class="show-footer">
-    Wasmo
-  </footer>
+  <%= render "shared/footer"%>
 </div>

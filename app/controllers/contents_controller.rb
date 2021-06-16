@@ -4,12 +4,14 @@ class ContentsController < ApplicationController
   
   def index
     @contents = Content.all
+    @plans = Plan.all
     if params[:start_date] != nil
       date = params[:start_date]
       @time = Date.parse(date)
       this_month = @time.month
       this_year = @time.year
-      @month_total = Content.group("YEAR(start_time)").group("MONTH(start_time)").group(:user_id).sum(:money)
+      @month_user = Content.group("YEAR(start_time)").group("MONTH(start_time)").group(:user_id)
+      @month_total = @month_user.sum(:money)
       @month_total[[this_year, this_month, current_user.id]]
       @month_total_view = @month_total[[this_year, this_month, current_user.id]]
     else
@@ -48,6 +50,13 @@ class ContentsController < ApplicationController
     @content.destroy
     redirect_to root_path
   end
+
+  #def search
+    #@contents = Content.search(params[:keyword])
+    #keyword = params[:keyword]
+    #render "index"
+  #end
+
 
   private
 

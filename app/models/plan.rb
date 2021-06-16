@@ -1,6 +1,8 @@
 class Plan < ApplicationRecord
   belongs_to :user
-  has_one :content
-
-  validates :target,       null: false
+  with_options presence: true do
+    validates :user_id, uniqueness: { scope: :target_month }
+    validates :target
+    validates :target_month
+  end
 end

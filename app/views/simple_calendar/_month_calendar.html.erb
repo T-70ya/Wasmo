@@ -5,10 +5,25 @@
     <%= link_to t('simple_calendar.previous', default: '<<'), calendar.url_for_previous_view, class:"calendar-left" %>
     <span class="calendar-title"><%= start_date.year %>年 <%= t('date.month_names')[start_date.month] %></span> 
     <%= link_to t('simple_calendar.next', default: '>>'), calendar.url_for_next_view, class:"calendar-right" %>
+    <div class='target'>
+      <% @plans.each do |p| %>
+        <% @target_time = p.target_month %>
+        <% year_target = @target_time.year %>
+        <% month_target = @target_time.month %>
+        <% if start_date.year == year_target && start_date.month == month_target && current_user.id == p.user_id %>
+          <%= link_to "目標金額 #{p.target}円", edit_plan_path(p), class:"target-edit" %>
+          <% if @month_total_view != nil %>
+            <span class="sagaku"><%= "差額 #{p.target - @month_total_view}円" %></span>
+          <% else %>
+            <span class="sagaku"><%= "差額 0円" %></span>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
       <% if @month_total_view != nil %>
-        <span class="month-money"><%= "#{@month_total_view}円" %></span>
+        <span class="month-money"><%= "使用金額 #{@month_total_view}円" %></span>
       <% else %>
-        <span class="month-money"><%= "0円" %></span>
+        <span class="month-money"><%= "使用金額 0円" %></span>
       <% end %>
   </div>
   <div class="calendar-index">
