@@ -1,14 +1,19 @@
 class ContentsController < ApplicationController
+  before_action :authenticate_user!, only: [:index, :new, :create, :edit, :destroy, :update]
+  before_action :ryaku, only: [:show, :edit, :update, :destroy]
+  
   def index
     @contents = Content.all
+    @plans = Plan.all
     if params[:start_date] != nil
       date = params[:start_date]
       @time = Date.parse(date)
       this_month = @time.month
       this_year = @time.year
-      @month_total = Content.group("YEAR(start_time)").group("MONTH(start_time)").sum(:money)
-      @month_total[[this_year, this_month]]
-      @month_total_view = @month_total[[this_year, this_month]]
+      @month_user = Content.group("YEAR(start_time)").group("MONTH(start_time)").group(:user_id)
+      @month_total = @month_user.sum(:money)
+      @month_total[[this_year, this_month, current_user.id]]
+      @month_total_view = @month_total[[this_year, this_month, current_user.id]]
     else
       render 'index'
     end
@@ -19,23 +24,21 @@ class ContentsController < ApplicationController
   end
 
   def create
-    if Content.create(params_content)
+    @content = Content.new(params_content)
+    if @content.save
       redirect_to contents_path(@time)
     else
-      render action: :index
+      render action: :new
     end
   end
 
   def show 
-    @content = Content.find(params[:id])
   end
 
   def edit
-    @content = Content.find(params[:id])
   end
 
   def update
-    @content = Content.find(params[:id])
     if @content.update(params_content)
       redirect_to content_path
     else
@@ -44,14 +47,24 @@ class ContentsController < ApplicationController
   end
 
   def destroy
-    @content = Content.find(params[:id])
     @content.destroy
     redirect_to root_path
   end
 
+  #def search
+    #@contents = Content.search(params[:keyword])
+    #keyword = params[:keyword]
+    #render "index"
+  #end
+
+
   private
 
   def params_content
-    params.require(:content).permit(:title, :money, :start_time)
+    params.require(:content).permit(:title, :money, :start_time).merge(user_id: current_user.id)
+  end
+
+  def ryaku
+    @content = Content.find(params[:id])
   end
 end

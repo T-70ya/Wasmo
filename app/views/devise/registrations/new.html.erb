@@ -1,0 +1,45 @@
+<%= render "shared/header"%>
+
+<div class="money-contents">
+  <div class="header-title">
+    新規登録
+  </div>
+  <div class="money-main">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+      <div class="rough-contents">
+        <div class="form-tag">
+        ユーザー名
+        <span class="mandatory">必須</span>
+        </div>
+        <%= f.text_field :username, class:"money-form" %>
+        <div class="form-tag">
+        メールアドレス
+        <span class="mandatory">必須</span>
+        </div>
+        <%= f.email_field :email, class:"money-form", autofocus: true, autocomplete: "email" %>
+        <div class="form-tag">
+        パスワード
+        <span class="mandatory">必須</span>
+        </div>
+        <%= f.password_field :password, class:"money-form", autocomplete: "current-password" %>
+        <div class="form-tag">
+        パスワード確認
+        <span class="mandatory">必須</span>
+        </div>
+        <%= f.password_field :password_confirmation, class:"money-form", autocomplete: "new-password" %>
+      </div>
+
+      <div class="btn-contents">
+        <%= f.submit "ログイン", class:"submit-btn" %>
+        <%= render "devise/shared/links" %>
+      </div>
+    <% end %>
+  </div>
+  <div class="footer-title">
+    <br />
+    <br />
+    <br />
+  </div>
+</div>
+<%= render "shared/footer"%>

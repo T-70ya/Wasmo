@@ -1,7 +1,5 @@
 <div class="contents-money">
-  <header class="app-header">
-    <%= link_to 'Wasmo', contents_path, class:"appname"%>
-  </header>
+  <%= render "shared/header" %>
     <div class="money-contents">
       <div class="header-title">
         無駄遣い内容の編集
@@ -40,8 +38,11 @@
 
         <% end %>
       </div>
+      <div class="footer-title">
+      <br />
+      <br />
+      <br />
+      </div>
     </div>
-  <footer class="money-footer">
-    Wasmo
-  </footer>
+  <%= render "shared/footer"%>
 </div>

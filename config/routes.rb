@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  get 'contents/index' => "contents#index", :as => :auth_at_start_date
+  devise_for :users
+  get 'contents/index'
+  #get 'search' => 'contents#search'
 
   root to: 'contents#index'
   resources :contents
+  resources :plans
 end
