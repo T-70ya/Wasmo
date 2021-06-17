@@ -1,0 +1,45 @@
+<div class="search-index">
+  <%= render "shared/header"%>
+  <div class="search">
+    <div class="header-title">
+      検索結果
+    </div>
+    <div class="search-page">
+      <div class="search-top">
+        <% @contents.each do |c|%>
+          <% if user_signed_in? && current_user.id == c.user_id %>
+            <div class="search-content">
+              <div class="sea">
+                <div class="searches">
+                  タイトル
+                </div>
+                <span class="content-style"><%= c.title%></span>
+              </div>
+              <div class="sea">
+                <div class="searches">
+                  使用金額
+                </div>
+                <span class="content-style"><%= link_to c.money, c %>円</span>
+              </div>
+              <div class="sea">
+                <div class="searches">
+                  使用日
+                </div>
+                <span class="content-style"><%= c.start_time.year %>年<%= c.start_time.month%>月<%= c.start_time.day%>日</span>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="search-btn-contents">
+        <%= link_to '戻る', contents_path, class:"search-back-btn" %>
+      </div>
+    </div>
+  </div>
+  <div class="footer-title">
+    <br />
+    <br />
+    <br />
+  </div>
+  <%= render "shared/footer"%>
+</div>

@@ -8,7 +8,7 @@ class Content < ApplicationRecord
     validates :user_id
   end
 
-  #def self.search(keyword)
-    #where(["title like? OR money like? OR start_time like?", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%"])
-  #end
+  def self.search(keyword)
+    where(["title like? OR money like?", "%#{keyword}%", "%#{keyword}%"])
+  end
 end
