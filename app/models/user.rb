@@ -6,6 +6,10 @@ class User < ApplicationRecord
 
   has_many :contents
   has_many :plans
+  
+  with_options presence: true do
+    validates :username
+  end
 
-  validates :username, presence: true
+
 end
