@@ -1,5 +1,5 @@
 class ContentsController < ApplicationController
-  before_action :authenticate_user!, only: [:index, :new, :create, :edit, :destroy, :update]
+  before_action :authenticate_user!, only: [:index, :new, :create, :edit, :destroy, :update, :show, :search]
   before_action :ryaku, only: [:show, :edit, :update, :destroy]
   
   def index
@@ -51,11 +51,11 @@ class ContentsController < ApplicationController
     redirect_to root_path
   end
 
-  #def search
-    #@contents = Content.search(params[:keyword])
-    #keyword = params[:keyword]
-    #render "index"
-  #end
+  def search
+    @contents = Content.search(params[:keyword])
+    @keyword = params[:keyword]
+    render "search"
+  end
 
 
   private

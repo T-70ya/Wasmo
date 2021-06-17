@@ -1,6 +1,3 @@
-form {
-  margin-top: 50px;
-}
 
 .money-contents {
   background-color: blanchedalmond;
@@ -21,6 +18,7 @@ form {
   display: flex;
   align-items: center;
   flex-direction: column;
+  margin-top: 50px;
 }
 
 .form-tag {
@@ -66,8 +64,8 @@ form {
 }
 
 .submit-btn {
-  background-color: aqua;
-  border: 1px solid aqua;
+  background-color:#77FFFF;
+  border: 0px;
   width: 300px;
   height: 80px;
   font-size: 20px;
@@ -90,12 +88,6 @@ form {
   padding: 15px;
 }
 
-.money-footer {
-  text-align: center;
-  font-family: 'Snell Roundhand',sans-serif;
-  font-size: 40px;
-  color: aqua;
-}
 
 .edit-submit-btn {
   background-color: red;

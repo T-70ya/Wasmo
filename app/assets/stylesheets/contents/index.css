@@ -4,22 +4,42 @@ html, body {
 
 header {
   background-color: oldlace;
+  display: flex;
+  align-items: center;
 }
 
 footer {
   background-color: oldlace;
 }
 
+.form-search {
+  display: flex;
+  align-items: center;
+}
+
 .app-header {
-  color: aqua;
   display: flex;
   justify-content: space-between;
-  position: relative;
+}
+
+.app-search {
+display: flex;
+justify-content: space-around;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+}
+
+.nav {
+  margin-right: 5vw;
 }
 
 .appname {
-  height: 80px;
-  width: 180px;
+  width: 12vw;
+  margin-right: 15vw;
+  margin-left: 4vw;
 }
 
 .toppage{
@@ -35,134 +55,124 @@ footer {
 }
 
 .calendar-index {
-  padding: 50px;
-  margin-top: 35px;
+  padding: 2vw 4vw;
 }
 
 .table.table-striped {
   background-color: white;
 }
 
-.calendar-footer {
-  text-align: center;
-  font-size: 40px;
-  font-family: 'Snell Roundhand',sans-serif;
-  color: aqua;
-}
-
 .money-btn {
-  background-color: aqua;
+  background-color:#77FFFF;
   color: white;
-  font-size: 20px;
-  padding: 5px;
-  position: absolute;
-  top: 135px;
-  left: 50px;
+  font-size: 1.5vw;
+  padding: 0.8vw;
+  margin-left: 4vw;
 }
 
 .month-money {
-  position: absolute;
-  top: 135px;
-  right: 50px;
-  font-size: 30px;
+  font-size: 2vw;
 }
 
 .user-name {
-  font-size: 20px;
+  font-size: 1.5vw;
   color: black;
-  position: absolute;
-  top: 30px;
-  right: 185px;
 }
 
 .logout {
-  font-size: 20px;
-  padding: 5px;
-  background-color: aqua;
+  font-size: 1.5vw;
+  padding: 0.8vw;
+  background-color: #77FFFF;
   color: white;
-  position: absolute;
-  top: 25px;
-  right: 50px;
+  margin-left: 1vw;
 }
 
 .login {
-  font-size: 20px;
-  padding: 5px;
-  background-color: aqua;
+  font-size: 1.5vw;
+  padding: 0.8vw;
+  background-color:#77FFFF;
   color:white;
-  position: absolute;
-  top: 20px;
-  right: 185px;
 }
 
 .sign-up {
-  font-size: 20px;
-  padding: 5px;
-  background-color: aqua;
+  font-size: 1.5vw;
+  padding: 0.8vw;
+  background-color: #77FFFF;
   color:white;
-  position: absolute;
-  top: 20px;
-  right: 50px;
+  margin-left: 1vw;
 }
 
 .target-btn {
-  background-color: aqua;
+  background-color: #77FFFF;
   color: white;
-  font-size: 20px;
-  padding: 5px;
-  position: absolute;
-  top: 135px;
-  left: 200px;
+  font-size: 1.5vw;
+  padding: 0.8vw;
+  margin-left: 1vw;
 }
 
 .target-edit {
-  position: absolute;
-  top: 85px;
-  right: 50px;
-  font-size: 30px;
+  font-size: 2vw;
   color:red;
 }
 
 .sagaku {
-  position: absolute;
-  top: 185px;
-  right: 50px;
-  font-size: 30px;
+  font-size: 2vw;
 }
 
+
 .footer-app {
-  height: 80px;
-  width: 160px;
-  margin-top: 5px;
+  width: 12vw;
+  margin-top: 1vw;
+}
+
+.calendar-footer {
+  display: flex;
+  justify-content: center;
 }
 
 .search-img {
-  height: 40px;
-  width: 40px;
-  position: absolute;
-  top: 25px;
-  left: 958px;
-  font-size: 25px;
-  background-color: aqua;
-  border: aqua;
+  height: 2.5vw;
+  width: 2.5vw;
+  border: #77FFFF;
 }
 
-.keyword {
-  height: 35px;
-  width: 500px;
-  position: absolute;
-  top: 25px;
-  left: 450px;
+.search-text {
+  height: 2vw;
+  width: 30vw;
 }
 
 .search-button {
   border: 0px;
   padding: 0px;
-  height: 40px;
+  height: 2.5vw;
 }
 
-.search-form {
-  margin: 0px;
+.target {
   display: flex;
-  align-items: center;
+  flex-direction: column;
 }
+
+.target-sagaku-total {
+  margin-right: 1vw;
+}
+
+.calendar-target {
+  display: flex;
+  justify-content: center;
+}
+
+.calendar-num {
+  margin-left: 35vw;
+  margin-right: 15vw;
+}
+
+.calendar-left {
+  font-size: 3vw;
+}
+ .calendar-title {
+   font-size: 3vw;
+ }
+
+ .calendar-right {
+   font-size: 3vw;
+ }
