@@ -7,15 +7,21 @@ class ContentsController < ApplicationController
     @plans = Plan.all
     if params[:start_date] != nil
       date = params[:start_date]
-      @time = Date.parse(date)
-      this_month = @time.month
-      this_year = @time.year
+      @date = Date.parse(date)
+      this_month = @date.month
+      this_year = @date.year
       @month_user = Content.group("YEAR(start_time)").group("MONTH(start_time)").group(:user_id)
       @month_total = @month_user.sum(:money)
       @month_total[[this_year, this_month, current_user.id]]
       @month_total_view = @month_total[[this_year, this_month, current_user.id]]
     else
-      render 'index'
+      @date = Date.today
+      this_month = @date.month
+      this_year = @date.year
+      @month_user = Content.group("YEAR(start_time)").group("MONTH(start_time)").group(:user_id)
+      @month_total = @month_user.sum(:money)
+      @month_total[[this_year, this_month, current_user.id]]
+      @month_total_view = @month_total[[this_year, this_month, current_user.id]]
     end
   end
 
@@ -26,7 +32,7 @@ class ContentsController < ApplicationController
   def create
     @content = Content.new(params_content)
     if @content.save
-      redirect_to contents_path(@time)
+      redirect_to contents_path
     else
       render action: :new
     end
