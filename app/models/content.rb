@@ -5,6 +5,7 @@ class Content < ApplicationRecord
   with_options presence: true do
     validates :title
     validates :money, numericality: true
+    validates :start_time
     validates :user_id
   end
 
