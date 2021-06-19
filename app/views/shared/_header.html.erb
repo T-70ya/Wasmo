@@ -14,7 +14,7 @@
   </div>
   <div class="nav">
     <% if user_signed_in? %>
-      <%= link_to current_user.username, '#', class:"user-name" %>
+      <%= link_to current_user.username, edit_user_registration_path, class:"user-name" %>
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"logout"%>
     <% else %>
       <%= link_to "ログイン", user_session_path, class:"login"%>
