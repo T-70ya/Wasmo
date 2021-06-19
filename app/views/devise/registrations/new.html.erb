@@ -12,17 +12,17 @@
         ユーザー名
         <span class="mandatory">必須</span>
         </div>
-        <%= f.text_field :username, class:"money-form" %>
+        <%= f.text_field :username, class:"money-form", autofocus: true, placeholder:"(例)太郎" %>
         <div class="form-tag">
         メールアドレス
         <span class="mandatory">必須</span>
         </div>
-        <%= f.email_field :email, class:"money-form", autofocus: true, autocomplete: "email" %>
+        <%= f.email_field :email, class:"money-form", autocomplete: "email", placeholder:"(例)abc@abc.ab" %>
         <div class="form-tag">
         パスワード
         <span class="mandatory">必須</span>
         </div>
-        <%= f.password_field :password, class:"money-form", autocomplete: "current-password" %>
+        <%= f.password_field :password, class:"money-form", autocomplete: "current-password", placeholder:"6文字以上" %>
         <div class="form-tag">
         パスワード確認
         <span class="mandatory">必須</span>

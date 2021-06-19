@@ -12,3 +12,14 @@
   font-size: 15px;
 }
 
+.account-btn {
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+}
+
+.account-dlt {
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+}
